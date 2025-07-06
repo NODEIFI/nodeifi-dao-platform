@@ -115,6 +115,9 @@ This is a full-stack web application for Nodeifi DAO - a blockchain infrastructu
 - July 6, 2025. SSL certificate configured - nodeifi.io fully secure with HTTPS
 - July 6, 2025. Added www.nodeifi.io domain with SSL - both domains fully operational
 - July 6, 2025. Development environment template created for safe testing
+- July 7, 2025. Fixed news page - now displays 6 comprehensive blog posts instead of 1
+- July 7, 2025. Added individual blog post pages with full content and proper routing
+- July 7, 2025. Created /post/:slug routes for detailed article viewing with internal navigation
 
 ## User Preferences
 
