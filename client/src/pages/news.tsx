@@ -174,7 +174,7 @@ export default function News() {
                       stiffness: 100
                     }}
                     whileHover={{ scale: 1.02, y: -5 }}
-                    onClick={() => window.open(post.link, '_blank')}
+                    onClick={() => window.location.href = post.link}
                   >
                     <div className="relative h-48 overflow-hidden">
                       <img 

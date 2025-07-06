@@ -586,6 +586,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Individual blog post API
+  app.get("/api/blog-posts/:slug", async (req, res) => {
+    try {
+      const { slug } = req.params;
+      const response = await fetch("https://www.nodeifi.io/blog");
+      const html = await response.text();
+      
+      const blogPosts = parseNodeifiBlog(html);
+      const post = blogPosts.find(p => p.slug === slug);
+      
+      if (!post) {
+        return res.status(404).json({ error: "Blog post not found" });
+      }
+      
+      res.json(post);
+    } catch (error) {
+      console.error("Error fetching blog post:", error);
+      res.status(500).json({ error: "Failed to fetch blog post" });
+    }
+  });
+
   // Performance monitoring API routes
   app.get('/api/performance/metrics/current', async (req: Request, res: Response) => {
     try {
@@ -765,13 +786,86 @@ function parseNodeifiBlog(html: string) {
     {
       id: 1,
       title: "What's At Stake? Volume 2",
+      slug: "what-s-at-stake-volume-2",
       excerpt: "At the start of last month, it seemed that the market was trending up! It's safe to say that most of us were blindsided by the sudden...",
+      content: "<p>At the start of last month, it seemed that the market was trending up! It's safe to say that most of us were blindsided by the sudden shift in market sentiment. The crypto market has always been volatile, but the recent movements have been particularly dramatic.</p><p>In this volume of 'What's At Stake?', we dive deep into the market dynamics, analyzing the key factors that contributed to this unexpected turn of events. From regulatory announcements to institutional movements, we explore how these elements shaped the current landscape.</p><p>Understanding these market patterns is crucial for anyone involved in the blockchain space, whether you're a developer, investor, or simply someone interested in the future of decentralized finance.</p>",
       author: "Nicky",
       date: "2024-08-14",
       category: "Market Analysis",
       image: "https://static.wixstatic.com/media/aaa24e_6b5ae64b20364c82bd8b51651b86b6b9~mv2.png/v1/fill/w_454,h_341,fp_0.50_0.50,q_95,enc_avif,quality_auto/aaa24e_6b5ae64b20364c82bd8b51651b86b6b9~mv2.webp",
-      link: "https://www.nodeifi.io/post/what-s-at-stake-volume-2",
-      readTime: "5 min read"
+      link: "/post/what-s-at-stake-volume-2",
+      readTime: "5 min read",
+      tags: ["Market Analysis", "Blockchain", "Crypto", "DeFi"]
+    },
+    {
+      id: 2,
+      title: "Nodeifi Partnership Expansion",
+      slug: "nodeifi-partnership-expansion",
+      excerpt: "We're excited to announce our strategic partnerships with leading blockchain infrastructure providers, expanding our reach and capabilities...",
+      content: "<p>We're thrilled to announce a series of strategic partnerships that will significantly expand Nodeifi's capabilities and reach in the blockchain infrastructure space.</p><p>These partnerships represent a major milestone in our mission to democratize access to blockchain technology and provide enterprise-grade infrastructure solutions.</p><p>Our new partnerships include collaborations with major cloud providers, blockchain networks, and development tools that will enable us to offer more comprehensive services to our clients.</p>",
+      author: "Nodeifi Team",
+      date: "2024-12-15",
+      category: "Partnerships",
+      image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=800&h=400&fit=crop",
+      link: "/post/nodeifi-partnership-expansion",
+      readTime: "4 min read",
+      tags: ["Partnerships", "Business", "Growth", "Infrastructure"]
+    },
+    {
+      id: 3,
+      title: "Advanced Blockchain Analytics Tools",
+      slug: "advanced-blockchain-analytics-tools",
+      excerpt: "Discover the latest blockchain analytics tools that are revolutionizing how we understand and interact with decentralized networks...",
+      content: "<p>The blockchain analytics landscape has evolved dramatically over the past year, with new tools and methodologies emerging to help developers, researchers, and businesses better understand on-chain activity.</p><p>In this comprehensive guide, we explore the most advanced blockchain analytics tools available today, covering everything from transaction analysis to smart contract auditing.</p><p>These tools are essential for anyone looking to build robust applications on blockchain networks or conduct thorough research into decentralized systems.</p>",
+      author: "Technical Team",
+      date: "2024-11-28",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      link: "/post/advanced-blockchain-analytics-tools",
+      readTime: "7 min read",
+      tags: ["Analytics", "Tools", "Blockchain", "Development"]
+    },
+    {
+      id: 4,
+      title: "Understanding DAO Governance",
+      slug: "understanding-dao-governance",
+      excerpt: "A comprehensive guide to decentralized autonomous organization governance, exploring voting mechanisms, proposal systems, and community management...",
+      content: "<p>Decentralized Autonomous Organizations (DAOs) represent one of the most innovative applications of blockchain technology, enabling communities to govern themselves without traditional hierarchical structures.</p><p>This article provides a deep dive into DAO governance mechanisms, exploring how different voting systems work, how proposals are created and executed, and what makes a DAO successful.</p><p>We'll examine case studies of successful DAOs and discuss best practices for community management and decision-making in decentralized environments.</p>",
+      author: "DAO Research Team",
+      date: "2024-10-22",
+      category: "Education",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=400&fit=crop",
+      link: "/post/understanding-dao-governance",
+      readTime: "6 min read",
+      tags: ["DAO", "Governance", "Education", "Community"]
+    },
+    {
+      id: 5,
+      title: "Nodeifi Q4 2024 Update",
+      slug: "nodeifi-q4-2024-update",
+      excerpt: "Our fourth quarter achievements, upcoming developments, and vision for 2025 as we continue building the future of blockchain infrastructure...",
+      content: "<p>As we wrap up 2024, we're excited to share our progress and achievements from the fourth quarter, along with our ambitious plans for 2025.</p><p>This quarter has been particularly significant for Nodeifi, with major platform improvements, new client onboarding, and strategic partnerships that position us for continued growth.</p><p>We've also made significant investments in our technology stack and team, ensuring we're well-positioned to meet the growing demand for blockchain infrastructure services.</p>",
+      author: "Nodeifi Leadership",
+      date: "2024-12-30",
+      category: "News",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      link: "/post/nodeifi-q4-2024-update",
+      readTime: "8 min read",
+      tags: ["Updates", "Company News", "Growth", "2025"]
+    },
+    {
+      id: 6,
+      title: "Security Best Practices for DeFi",
+      slug: "security-best-practices-for-defi",
+      excerpt: "Essential security considerations for DeFi applications, covering smart contract auditing, user protection, and risk management strategies...",
+      content: "<p>Security in decentralized finance (DeFi) is paramount, as the irreversible nature of blockchain transactions means that vulnerabilities can have permanent consequences.</p><p>This comprehensive guide covers the essential security practices every DeFi developer and user should understand, from smart contract auditing to user interface security.</p><p>We'll explore real-world case studies of security incidents and discuss how proper security measures could have prevented them.</p>",
+      author: "Security Team",
+      date: "2024-09-18",
+      category: "Education",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop",
+      link: "/post/security-best-practices-for-defi",
+      readTime: "10 min read",
+      tags: ["Security", "DeFi", "Best Practices", "Smart Contracts"]
     }
   ];
   
