@@ -1,0 +1,76 @@
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="globeGradient" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#FF7A1C" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FF5722" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="orbitGradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0099CC" stop-opacity="0.3"/>
+    </radialGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A1C"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF7A1C"/>
+      <stop offset="50%" stop-color="#FF5722"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Globe Section -->
+  <g transform="translate(50, 50)">
+    <!-- Outer orbital ring -->
+    <circle cx="100" cy="100" r="90" fill="none" stroke="url(#orbitGradient)" stroke-width="2" stroke-dasharray="6,10" opacity="0.6"/>
+    
+    <!-- Middle orbital ring -->
+    <circle cx="100" cy="100" r="75" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="3,6" opacity="0.5"/>
+    
+    <!-- Inner orbital ring -->
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#FF7A1C" stroke-width="1" stroke-dasharray="2,4" opacity="0.4"/>
+    
+    <!-- Main globe -->
+    <circle cx="100" cy="100" r="50" fill="url(#globeGradient)" stroke="#FF7A1C" stroke-width="2"/>
+    
+    <!-- Globe surface network pattern -->
+    <path d="M50 100 Q75 75 100 100 Q125 125 150 100" stroke="#00D4FF" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M100 50 Q75 75 100 100 Q125 125 100 150" stroke="#00D4FF" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M70 70 Q85 85 100 100 Q115 115 130 130" stroke="#FF7A1C" stroke-width="1" fill="none" opacity="0.6"/>
+    <path d="M130 70 Q115 85 100 100 Q85 115 70 130" stroke="#FF7A1C" stroke-width="1" fill="none" opacity="0.6"/>
+    
+    <!-- Network nodes -->
+    <circle cx="100" cy="65" r="3" fill="url(#nodeGradient)"/>
+    <circle cx="100" cy="135" r="3" fill="url(#nodeGradient)"/>
+    <circle cx="65" cy="100" r="3" fill="url(#nodeGradient)"/>
+    <circle cx="135" cy="100" r="3" fill="url(#nodeGradient)"/>
+    <circle cx="80" cy="80" r="2" fill="#00D4FF"/>
+    <circle cx="120" cy="80" r="2" fill="#00D4FF"/>
+    <circle cx="80" cy="120" r="2" fill="#00D4FF"/>
+    <circle cx="120" cy="120" r="2" fill="#00D4FF"/>
+    
+    <!-- Orbital dots -->
+    <circle cx="190" cy="100" r="4" fill="#FF7A1C" opacity="0.8"/>
+    <circle cx="175" cy="100" r="3" fill="#00D4FF" opacity="0.6"/>
+    <circle cx="160" cy="100" r="2" fill="#FF7A1C" opacity="0.4"/>
+    
+    <!-- Central highlight -->
+    <circle cx="85" cy="85" r="12" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.3"/>
+    <circle cx="82" cy="82" r="5" fill="#00D4FF" opacity="0.2"/>
+  </g>
+  
+  <!-- Text Section -->
+  <g transform="translate(280, 120)">
+    <!-- NODEIFI text -->
+    <text x="0" y="0" font-family="Orbitron, monospace" font-size="72" font-weight="700" fill="url(#textGradient)" letter-spacing="4px">NODEIFI</text>
+    
+    <!-- Subtle glow effect -->
+    <text x="0" y="0" font-family="Orbitron, monospace" font-size="72" font-weight="700" fill="none" stroke="#FF7A1C" stroke-width="1" opacity="0.3" letter-spacing="4px">NODEIFI</text>
+  </g>
+  
+  <!-- Connecting elements -->
+  <path d="M240 150 Q260 140 280 150" stroke="#00D4FF" stroke-width="2" fill="none" opacity="0.4"/>
+  <circle cx="250" cy="145" r="2" fill="#FF7A1C" opacity="0.6"/>
+  <circle cx="270" cy="145" r="1.5" fill="#00D4FF" opacity="0.5"/>
+</svg>

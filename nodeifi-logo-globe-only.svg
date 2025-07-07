@@ -1,0 +1,54 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="globeGradient" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#FF7A1C" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FF5722" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="orbitGradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0099CC" stop-opacity="0.3"/>
+    </radialGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A1C"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer orbital ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#orbitGradient)" stroke-width="2" stroke-dasharray="8,12" opacity="0.6"/>
+  
+  <!-- Middle orbital ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="4,8" opacity="0.5"/>
+  
+  <!-- Inner orbital ring -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#FF7A1C" stroke-width="1" stroke-dasharray="2,6" opacity="0.4"/>
+  
+  <!-- Main globe -->
+  <circle cx="256" cy="256" r="120" fill="url(#globeGradient)" stroke="#FF7A1C" stroke-width="3"/>
+  
+  <!-- Globe surface network pattern -->
+  <path d="M136 256 Q196 200 256 256 Q316 312 376 256" stroke="#00D4FF" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M256 136 Q200 196 256 256 Q312 316 256 376" stroke="#00D4FF" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M180 180 Q218 218 256 256 Q294 294 332 332" stroke="#FF7A1C" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M332 180 Q294 218 256 256 Q218 294 180 332" stroke="#FF7A1C" stroke-width="1.5" fill="none" opacity="0.6"/>
+  
+  <!-- Network nodes -->
+  <circle cx="256" cy="156" r="4" fill="url(#nodeGradient)"/>
+  <circle cx="256" cy="356" r="4" fill="url(#nodeGradient)"/>
+  <circle cx="156" cy="256" r="4" fill="url(#nodeGradient)"/>
+  <circle cx="356" cy="256" r="4" fill="url(#nodeGradient)"/>
+  <circle cx="200" cy="200" r="3" fill="#00D4FF"/>
+  <circle cx="312" cy="200" r="3" fill="#00D4FF"/>
+  <circle cx="200" cy="312" r="3" fill="#00D4FF"/>
+  <circle cx="312" cy="312" r="3" fill="#00D4FF"/>
+  
+  <!-- Orbital dots -->
+  <circle cx="476" cy="256" r="6" fill="#FF7A1C" opacity="0.8"/>
+  <circle cx="436" cy="256" r="4" fill="#00D4FF" opacity="0.6"/>
+  <circle cx="396" cy="256" r="3" fill="#FF7A1C" opacity="0.4"/>
+  
+  <!-- Central highlight -->
+  <circle cx="230" cy="230" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.3"/>
+  <circle cx="225" cy="225" r="8" fill="#00D4FF" opacity="0.2"/>
+</svg>

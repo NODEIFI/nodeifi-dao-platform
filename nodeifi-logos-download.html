@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodeifi Logo Collection - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0A0A0B 0%, #1A1A1A 50%, #0A0A0B 100%);
+            color: #FAFAFA;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FF7A1C, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #00D4FF;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .logo-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 122, 28, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-card:hover {
+            border-color: #00D4FF;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .logo-preview {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            background: #000;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 122, 28, 0.2);
+        }
+        
+        .logo-preview img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #FF7A1C;
+        }
+        
+        .logo-description {
+            color: #B0B0B0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background: linear-gradient(45deg, #FF7A1C, #FF5722);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(45deg, #00D4FF, #0099CC);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+        
+        .usage-section {
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .usage-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00D4FF;
+            text-align: center;
+        }
+        
+        .usage-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .usage-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #FF7A1C;
+        }
+        
+        .usage-item h3 {
+            color: #FF7A1C;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .usage-item p {
+            color: #B0B0B0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 122, 28, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(255, 87, 34, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <div class="container">
+        <h1>NODEIFI LOGO COLLECTION</h1>
+        <p class="subtitle">Professional logo variations for your blockchain infrastructure platform</p>
+        
+        <div class="logo-grid">
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="nodeifi-logo-globe-only.svg" alt="Nodeifi Globe Only Logo" />
+                </div>
+                <h3 class="logo-title">Globe Only</h3>
+                <p class="logo-description">
+                    Clean globe symbol with orbital network visualization. Perfect for favicons, app icons, and minimalist branding applications.
+                </p>
+                <a href="nodeifi-logo-globe-only.svg" download="nodeifi-logo-globe-only.svg" class="download-btn">
+                    Download SVG
+                </a>
+            </div>
+            
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="nodeifi-logo-with-name.svg" alt="Nodeifi Logo with Name" />
+                </div>
+                <h3 class="logo-title">Globe + Name</h3>
+                <p class="logo-description">
+                    Complete horizontal layout combining the cosmic globe with the NODEIFI wordmark. Ideal for headers, business cards, and primary branding.
+                </p>
+                <a href="nodeifi-logo-with-name.svg" download="nodeifi-logo-with-name.svg" class="download-btn">
+                    Download SVG
+                </a>
+            </div>
+            
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="nodeifi-logo-with-strapline.svg" alt="Nodeifi Logo with Strapline" />
+                </div>
+                <h3 class="logo-title">Complete Brand</h3>
+                <p class="logo-description">
+                    Full brand presentation with globe, name, and service descriptions. Perfect for presentations, marketing materials, and website headers.
+                </p>
+                <a href="nodeifi-logo-with-strapline.svg" download="nodeifi-logo-with-strapline.svg" class="download-btn">
+                    Download SVG
+                </a>
+            </div>
+        </div>
+        
+        <div class="usage-section">
+            <h2 class="usage-title">Usage Guidelines</h2>
+            <div class="usage-list">
+                <div class="usage-item">
+                    <h3>Globe Only</h3>
+                    <p>Use for app icons, favicons, social media profile pictures, and minimal branding where space is limited. Works great at small sizes.</p>
+                </div>
+                
+                <div class="usage-item">
+                    <h3>Globe + Name</h3>
+                    <p>Primary logo for most applications including website headers, business cards, letterheads, and horizontal layouts. Maintains readability across sizes.</p>
+                </div>
+                
+                <div class="usage-item">
+                    <h3>Complete Brand</h3>
+                    <p>Use for marketing materials, presentations, large format printing, and detailed brand presentations where the full value proposition needs to be communicated.</p>
+                </div>
+                
+                <div class="usage-item">
+                    <h3>Color Scheme</h3>
+                    <p>Primary Orange (#FF7A1C), Accent Cyan (#00D4FF), and cosmic gradients maintain brand consistency with your existing platform design.</p>
+                </div>
+                
+                <div class="usage-item">
+                    <h3>File Format</h3>
+                    <p>SVG format ensures infinite scalability and crisp display on all devices. Can be easily converted to PNG/JPG for specific applications.</p>
+                </div>
+                
+                <div class="usage-item">
+                    <h3>Typography</h3>
+                    <p>Uses Orbitron font for the main title and Space Grotesk for supporting text, matching your website's cosmic tech aesthetic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
